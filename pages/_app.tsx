@@ -7,7 +7,9 @@ const brand = {
     beige: '#edede2',
     grey: '#a8a8a6',
     white: '#f5f5f5',
-    orange: '#db936a',
+    orange: {
+      500: '#db936a',
+    },
   },
   styles: {
     global: {
