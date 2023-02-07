@@ -41,7 +41,7 @@ export const Plane = ({ state }: { state: PlaneState }) => {
   })
 
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh rotation={[-Math.PI / 2, 0, 1.75]}>
       <planeGeometry ref={planeGeometryRef} args={[10, 10, 70, 70]} />
       <meshStandardMaterial
         ref={planeMaterialRef}

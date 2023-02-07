@@ -2,7 +2,7 @@ import { Box, Heading, Button, Text, Stack } from '@chakra-ui/react'
 
 export const Banner = () => {
   return (
-    <Box height={'90vh'} pt={'40%'} zIndex={10}>
+    <Box height={'70vh'} pt={'30%'} zIndex={10}>
       <Stack>
         <Heading as='h1' size='3xl' color='grey'>
           Hi, I'm Simon
