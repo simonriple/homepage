@@ -1,8 +1,8 @@
-import { Box, Heading, Button, Text, Stack } from '@chakra-ui/react'
+import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react'
 
 export const Banner = () => {
   return (
-    <Box height={'70vh'} pt={'30%'} zIndex={10}>
+    <Box pt={'25%'}>
       <Stack>
         <Heading as='h1' size='3xl' color='grey'>
           Hi, I'm Simon

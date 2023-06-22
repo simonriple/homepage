@@ -39,11 +39,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <>
-      <Container minH='100vh' zIndex={10}>
+      <Container minH='100vh'>
         <Stack>
           <Banner />
+          <BustIllustration />
           <Tabs variant='soft-rounded' colorScheme='orange'>
-            <Center zIndex={10}>
+            <Center>
               <TabList>
                 <Tab>Projects</Tab>
                 <Tab>Workshops</Tab>
@@ -61,7 +62,6 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Footer />
         </Stack>
       </Container>
-      <BustIllustration />
     </>
   )
 }
