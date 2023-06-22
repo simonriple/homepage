@@ -10,7 +10,7 @@ const Bust = dynamic(() => import('./Bust').then((mod) => mod.Bust), {
 
 export const BustIllustration = () => {
   return (
-    <Box height='55vh'>
+    <Box height='55dvh'>
       <Canvas camera={{ position: [0, 2, 6] }}>
         <ambientLight />
         <Suspense fallback={null}>

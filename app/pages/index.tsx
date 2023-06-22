@@ -39,7 +39,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <>
-      <Container minH='100vh'>
+      <Container minH='100dvh'>
         <Stack>
           <Banner />
           <BustIllustration />
