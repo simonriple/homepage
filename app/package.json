@@ -12,6 +12,7 @@
     "@chakra-ui/react": "2.3.4",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
+    "@react-three/drei": "^9.77.1",
     "@react-three/fiber": "8.7.4",
     "@sanity/client": "^2.23.2",
     "@sanity/image-url": "^1.0.1",

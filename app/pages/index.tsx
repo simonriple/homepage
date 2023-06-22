@@ -14,9 +14,9 @@ import { IProject } from '../model/project'
 import { IWorkshop } from '../model/workshop'
 import { Banner } from '../modules/Banner'
 import { Footer } from '../modules/Footer'
-import { CanvasIllustration } from '../modules/illustration/CanvasIllustration'
 import { Projects } from '../modules/Projects'
 import { Workshops } from '../modules/Workshops'
+import { BustIllustration } from '../modules/illustration/BustIllustration'
 
 export async function getStaticProps() {
   const projectData: IProject[] = await client.fetch(`
@@ -61,7 +61,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Footer />
         </Stack>
       </Container>
-      <CanvasIllustration />
+      <BustIllustration />
     </>
   )
 }
