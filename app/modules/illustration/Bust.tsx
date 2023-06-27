@@ -17,7 +17,12 @@ export const Bust = () => {
   }, [obj])
 
   return (
-    <mesh geometry={geometry} scale={2} position={[0, 2.5, 0]}>
+    <mesh
+      geometry={geometry}
+      scale={2}
+      position={[0, 2.5, 0]}
+      rotation={[0, -1, 0]}
+    >
       <meshBasicMaterial color='#db936a' wireframe />
     </mesh>
   )

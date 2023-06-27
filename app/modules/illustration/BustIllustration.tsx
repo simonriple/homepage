@@ -16,7 +16,7 @@ export const BustIllustration = () => {
         <Suspense fallback={null}>
           <Bust />
         </Suspense>
-        <OrbitControls autoRotate autoRotateSpeed={3} enableZoom={false} />
+        <OrbitControls autoRotate autoRotateSpeed={2} enableZoom={false} />
       </Canvas>
     </Box>
   )

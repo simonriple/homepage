@@ -46,8 +46,8 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Tabs variant='soft-rounded' colorScheme='orange'>
             <Center>
               <TabList>
-                <Tab>Projects</Tab>
-                <Tab>Workshops</Tab>
+                <Tab>Building</Tab>
+                <Tab>Sharing</Tab>
               </TabList>
             </Center>
             <TabPanels>
