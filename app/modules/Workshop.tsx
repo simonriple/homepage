@@ -1,17 +1,9 @@
 import Image from 'next/image'
-import {
-  Box,
-  HStack,
-  Heading,
-  IconButton,
-  Text,
-  Stack,
-  Center,
-} from '@chakra-ui/react'
-import { urlFor } from '../imageUrl'
 import Link from 'next/link'
 import { FaGithub, FaPlayCircle } from 'react-icons/fa'
+import { urlFor } from '../imageUrl'
 import { IWorkshop } from '../model/workshop'
+import { Card } from './Card'
 
 export const Workshop = ({
   title,
@@ -21,51 +13,39 @@ export const Workshop = ({
   appLink,
 }: IWorkshop) => {
   return (
-    <Box p={5} shadow='md' borderRadius='lg' bg='grey'>
-      <Stack>
-        <Heading>{title}</Heading>
-        <Text>{description}</Text>
+    <Card>
+      <h2 className='text-5xl text-white pb-2'>{title}</h2>
+      <div className='flex flex-col items-center gap-2'>
         {mainImage && (
-          <Box
-            width='100%'
-            minWidth='100px'
-            height='250px'
-            position='relative'
-            borderRadius='lg'
-            overflow='hidden'
-          >
+          <div>
             <Image
-              src={urlFor(mainImage).width(800).url()}
-              objectFit='cover'
-              layout='fill'
+              className='grayscale hover:grayscale-0'
+              src={urlFor(mainImage).width(400).url()}
+              objectFit='contain'
+              width={400}
+              height={400}
             />
-          </Box>
+          </div>
         )}
-        <Center>
-          <HStack>
-            {githubLink && (
-              <Link href={githubLink}>
-                <IconButton
-                  aria-label='github'
-                  variant='ghost'
-                  colorScheme='grey'
-                  icon={<FaGithub size={28} />}
-                />
-              </Link>
-            )}
-            {appLink && (
-              <Link href={appLink}>
-                <IconButton
-                  aria-label='try it'
-                  variant='ghost'
-                  colorScheme='grey'
-                  icon={<FaPlayCircle size={28} />}
-                />
-              </Link>
-            )}
-          </HStack>
-        </Center>
-      </Stack>
-    </Box>
+        <p className='text-lg text-white'>{description}</p>
+
+        <div className='flex justify-center gap-2'>
+          {githubLink && (
+            <Link href={githubLink}>
+              <button aria-label='github'>
+                <FaGithub size={28} className='text-white' />
+              </button>
+            </Link>
+          )}
+          {appLink && (
+            <Link href={appLink}>
+              <button aria-label='try it'>
+                <FaPlayCircle size={28} className='text-white' />
+              </button>
+            </Link>
+          )}
+        </div>
+      </div>
+    </Card>
   )
 }

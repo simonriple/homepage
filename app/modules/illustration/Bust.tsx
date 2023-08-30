@@ -17,13 +17,16 @@ export const Bust = () => {
   }, [obj])
 
   return (
-    <mesh
+    <points
       geometry={geometry}
       scale={2}
       position={[0, 2.5, 0]}
       rotation={[0, -1, 0]}
     >
-      <meshBasicMaterial color='#db936a' wireframe />
-    </mesh>
+      {/* <meshPhongMaterial color='#51B2B2' /> */}
+      {/* <meshMatcapMaterial color='#51B2B2' /> */}
+      {/* <meshBasicMaterial color='#51B2B2' wireframe /> */}
+      <pointsMaterial color='#51B2B2' size={0.015} />
+    </points>
   )
 }

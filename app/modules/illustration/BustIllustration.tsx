@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react'
 import { OrbitControls } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 
@@ -10,14 +9,15 @@ const Bust = dynamic(() => import('./Bust').then((mod) => mod.Bust), {
 
 export const BustIllustration = () => {
   return (
-    <Box height='55dvh'>
+    <div style={{ height: '55dvh' }}>
       <Canvas camera={{ position: [0, 2, 6] }}>
-        <ambientLight />
+        {/* <ambientLight /> */}
+        <spotLight position={[0, 4, 2]} />
         <Suspense fallback={null}>
           <Bust />
         </Suspense>
         <OrbitControls autoRotate autoRotateSpeed={2} enableZoom={false} />
       </Canvas>
-    </Box>
+    </div>
   )
 }

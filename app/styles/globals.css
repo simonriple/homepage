@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --background-color: #121212;
+  --checkers-color: #1a1a1a;
+  --text-color-1: #bfeeee;
+  --text-color-2: #57bebe;
+  --text-color-3: #31e6e6;
+  --text-color-4: #78cccc;
+}
+
+body {
+  background-size: 10px 10px;
+  background-image: conic-gradient(
+    var(--background-color) 90deg,
+    var(--background-color) 90deg 180deg,
+    var(--checkers-color) 180deg 270deg,
+    var(--background-color) 270deg
+  );
+  /* linear-gradient(to right, grey 4px, transparent 1px),
+    linear-gradient(to bottom, grey 4px, transparent 1px); */
+}
+
+.glow-text {
+  color: var(--text-color-1);
+  text-shadow: 0 0 15px var(--text-color-2);
+  animation: glowTextPulse 3s infinite;
+}
+
+@keyframes glowTextPulse {
+  0% {
+    text-shadow: 0 0 11px var(--text-color-1);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--text-color-2);
+  }
+  100% {
+    text-shadow: 0 0 11px var(--text-color-1);
+  }
+}
+
+.glow-box {
+  box-shadow: 0 0 15px var(--text-color-2);
+  animation: glowBoxPulse 3s infinite;
+}
+
+@keyframes glowBoxPulse {
+  0% {
+    box-shadow: 0 0 11px var(--text-color-1);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--text-color-2);
+  }
+  100% {
+    box-shadow: 0 0 11px var(--text-color-1);
+  }
+}
