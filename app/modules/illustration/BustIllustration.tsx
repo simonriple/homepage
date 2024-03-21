@@ -16,7 +16,11 @@ export const BustIllustration = () => {
         <Suspense fallback={null}>
           <Bust />
         </Suspense>
-        <OrbitControls autoRotate autoRotateSpeed={2} enableZoom={false} />
+        <OrbitControls
+          enableZoom={false}
+          minPolarAngle={Math.PI / 2 - 0.5}
+          maxPolarAngle={Math.PI / 2}
+        />
       </Canvas>
     </div>
   )

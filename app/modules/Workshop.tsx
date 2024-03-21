@@ -14,7 +14,7 @@ export const Workshop = ({
 }: IWorkshop) => {
   return (
     <Card>
-      <h2 className='text-5xl text-white pb-2'>{title}</h2>
+      <h2 className='text-4xl text-white pb-2'>{title}</h2>
       <div className='flex flex-col items-center gap-2'>
         {mainImage && (
           <div>
@@ -27,7 +27,7 @@ export const Workshop = ({
             />
           </div>
         )}
-        <p className='text-lg text-white'>{description}</p>
+        <p className='text-md text-white'>{description}</p>
 
         <div className='flex justify-center gap-2'>
           {githubLink && (

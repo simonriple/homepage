@@ -34,7 +34,7 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   )
   return (
     <>
-      <div className='container mx-auto p-5'>
+      <div className='p-5'>
         <Banner />
         <BustIllustration />
         <div className='flex justify-center pb-2'>
@@ -52,8 +52,12 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           </Button>
         </div>
 
-        {selectedTab === 'BUILDING' && <Projects projectData={projectData} />}
-        {selectedTab === 'SHARING' && <Workshops workshopData={workshopData} />}
+        <div className='max-w-md mx-auto'>
+          {selectedTab === 'BUILDING' && <Projects projectData={projectData} />}
+          {selectedTab === 'SHARING' && (
+            <Workshops workshopData={workshopData} />
+          )}
+        </div>
 
         <Footer />
       </div>

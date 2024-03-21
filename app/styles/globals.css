@@ -11,13 +11,14 @@
 }
 
 body {
-  background-size: 10px 10px;
+  background-color: var(--checkers-color);
+  /* background-size: 10px 10px;
   background-image: conic-gradient(
     var(--background-color) 90deg,
     var(--background-color) 90deg 180deg,
     var(--checkers-color) 180deg 270deg,
     var(--background-color) 270deg
-  );
+  ); */
   /* linear-gradient(to right, grey 4px, transparent 1px),
     linear-gradient(to bottom, grey 4px, transparent 1px); */
 }
