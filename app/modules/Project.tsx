@@ -1,17 +1,9 @@
 import Image from 'next/image'
-import {
-  Box,
-  HStack,
-  Heading,
-  IconButton,
-  Text,
-  Stack,
-  Center,
-} from '@chakra-ui/react'
-import { urlFor } from '../imageUrl'
 import Link from 'next/link'
 import { FaGithub, FaPlayCircle } from 'react-icons/fa'
+import { urlFor } from '../imageUrl'
 import { IProject } from '../model/project'
+import { Card } from './Card'
 
 export const Project = ({
   title,
@@ -21,53 +13,38 @@ export const Project = ({
   appLink,
 }: IProject) => {
   return (
-    <Box p={5} shadow='md' borderRadius='lg' bg='grey'>
-      <Stack>
-        <Heading>{title}</Heading>
-        <HStack justifyContent='space-between' alignItems='flex-start'>
-          <Text>{description}</Text>
-          {mainImage && (
-            <Box
-              width='100%'
-              minWidth='120px'
-              height='200px'
-              position='relative'
-              borderRadius='lg'
-              overflow='hidden'
-            >
-              <Image
-                src={urlFor(mainImage).width(400).url()}
-                objectFit='cover'
-                layout='fill'
-              />
-            </Box>
-          )}
-        </HStack>
-        <Center>
-          <HStack>
-            {githubLink && (
-              <Link href={githubLink}>
-                <IconButton
-                  aria-label='github'
-                  variant='ghost'
-                  colorScheme='grey'
-                  icon={<FaGithub size={28} />}
-                />
-              </Link>
-            )}
-            {appLink && (
-              <Link href={appLink}>
-                <IconButton
-                  aria-label='try it'
-                  variant='ghost'
-                  colorScheme='grey'
-                  icon={<FaPlayCircle size={28} />}
-                />
-              </Link>
-            )}
-          </HStack>
-        </Center>
-      </Stack>
-    </Box>
+    <Card>
+      <h2 className='text-4xl text-white pb-2'>{title}</h2>
+      <div className='flex flex-row gap-2'>
+        <p className='text-md text-white'>{description}</p>
+        {mainImage && (
+          <div className='w-full min-w-[120px]'>
+            <Image
+              className='grayscale hover:grayscale-0'
+              src={urlFor(mainImage).width(400).url()}
+              objectFit='cover'
+              width={400}
+              height={600}
+            />
+          </div>
+        )}
+      </div>
+      <div className='flex justify-center gap-2'>
+        {githubLink && (
+          <Link href={githubLink}>
+            <button aria-label='github'>
+              <FaGithub size={28} className='text-white' />
+            </button>
+          </Link>
+        )}
+        {appLink && (
+          <Link href={appLink}>
+            <button aria-label='try it'>
+              <FaPlayCircle size={28} className='text-white' />
+            </button>
+          </Link>
+        )}
+      </div>
+    </Card>
   )
 }

@@ -1,18 +1,10 @@
-import {
-  Center,
-  Container,
-  Stack,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-} from '@chakra-ui/react'
 import { InferGetStaticPropsType, NextPage } from 'next'
+import { useState } from 'react'
 import client from '../client'
 import { IProject } from '../model/project'
 import { IWorkshop } from '../model/workshop'
 import { Banner } from '../modules/Banner'
+import { Button } from '../modules/Button'
 import { Footer } from '../modules/Footer'
 import { Projects } from '../modules/Projects'
 import { Workshops } from '../modules/Workshops'
@@ -37,31 +29,38 @@ const Home: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   projectData,
   workshopData,
 }) => {
+  const [selectedTab, setSelectedTab] = useState<'BUILDING' | 'SHARING'>(
+    'BUILDING'
+  )
   return (
     <>
-      <Container minH='100dvh'>
-        <Stack>
-          <Banner />
-          <BustIllustration />
-          <Tabs variant='soft-rounded' colorScheme='orange'>
-            <Center>
-              <TabList>
-                <Tab>Building</Tab>
-                <Tab>Sharing</Tab>
-              </TabList>
-            </Center>
-            <TabPanels>
-              <TabPanel>
-                <Projects projectData={projectData} />
-              </TabPanel>
-              <TabPanel>
-                <Workshops workshopData={workshopData} />
-              </TabPanel>
-            </TabPanels>
-          </Tabs>
-          <Footer />
-        </Stack>
-      </Container>
+      <div className='p-5'>
+        <Banner />
+        <BustIllustration />
+        <div className='flex justify-center pb-2'>
+          <Button
+            selected={selectedTab === 'BUILDING'}
+            onClick={() => setSelectedTab('BUILDING')}
+          >
+            Building
+          </Button>
+          <Button
+            selected={selectedTab === 'SHARING'}
+            onClick={() => setSelectedTab('SHARING')}
+          >
+            Sharing
+          </Button>
+        </div>
+
+        <div className='max-w-md mx-auto'>
+          {selectedTab === 'BUILDING' && <Projects projectData={projectData} />}
+          {selectedTab === 'SHARING' && (
+            <Workshops workshopData={workshopData} />
+          )}
+        </div>
+
+        <Footer />
+      </div>
     </>
   )
 }

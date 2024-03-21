@@ -1,46 +1,9 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import '../styles/globals.css'
 
-import { extendTheme } from '@chakra-ui/react'
 import { AppProps } from 'next/app'
 
-const brand = {
-  colors: {
-    beige: '#edede2',
-    grey: '#a8a8a6',
-    white: '#f5f5f5',
-    orange: {
-      500: '#db936a',
-    },
-    green: {
-      500: '#B6D1C5',
-    },
-  },
-  styles: {
-    global: {
-      // styles for the `body`
-      body: {
-        bg: 'beige',
-        color: 'white',
-      },
-      // styles for the `a`
-      a: {
-        color: 'teal.500',
-        _hover: {
-          textDecoration: 'underline',
-        },
-      },
-    },
-  },
-}
-
-const theme = extendTheme(brand)
-
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  return (
-    <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
-  )
+  return <Component {...pageProps} />
 }
 
 export default MyApp
